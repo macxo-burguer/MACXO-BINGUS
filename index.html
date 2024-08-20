@@ -1,0 +1,48 @@
+//bolinha 1
+let posicaoXbolinha //define a posiçã0 x da bolinha 
+let posicaoYbolinha // define a posição Y da bolinha
+let diametro // tamanho da bolinha 
+let cor // cor da bolinha 
+
+
+function setup() {
+  createCanvas(600, 600); 
+   background(255,255,255); 
+  cor=color(random(0,255),random(0,255),random(0,255))
+  cor2=color(random(0,255),random(0,255),random(0,255))
+  cor3=color(random(0,255),random(0,255),random(0,255))
+
+  posicaoXbolinha=[300,200,100]
+  posicaoYbolinha=[300,200,300]
+  diametro=[20,20,20]
+}
+
+function draw() {
+  fill(cor)
+ circle(posicaoXbolinha[0],posicaoYbolinha[0],diametro[0])
+  fill(cor2)
+ circle(posicaoXbolinha[1],posicaoYbolinha[1],diametro[1])
+  fill(cor3)
+  circle(posicaoXbolinha[2],posicaoYbolinha[2],diametro[2])
+   //posicaoXbolinha=posicaoXbolinha+1
+ // posicaoYbolinha=posicaoYbolinha+1
+   diametro[0]=diametro[0]+1
+   diametro[1]=diametro[1]+1
+   diametro[2]=diametro[2]+1
+
+
+  if(mouseIsPressed){
+    cor=color(random(0,255),random(0,255),random(0,255))
+    cor2=color(random(0,255),random(0,255),random(0,255))
+    cor3=color(random(0,255),random(0,255),random(0,255))
+
+    diametro[0] =0
+     diametro[1] =0
+     diametro[2] =0
+
+  }
+  
+  if(keyIsPressed){
+    noLoop()
+   }
+}
